@@ -17,11 +17,10 @@ svg {
 <body>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="draw-a-line.js"></script>
 <script>
 
-var mainw = 960,
-    mainh = 500;
+var mainw = 1280,
+    mainh = 800;
 
 d3.select('body').append('svg')
     .attr('width', mainw)
@@ -49,7 +48,7 @@ function draw(selection){
         })
         .on('mousemove', function(){ 
             if (keep) {
-                Line = line([xy0, d3.mouse(this).map(function(x){ return x - 1; })]);
+                Line = line([xy0, d3.mouse(this).map(function(x){ return x - 8; })]);
                 console.log(Line);
                 path.attr('d', Line);
             }
@@ -61,7 +60,7 @@ d3.select('svg').append('rect')
     .attr('y', 0)
     .attr('width', mainw)
     .attr('height', mainh)
-    .style({'fill': 'white'})
+    .style({'fill': '#ffbf18'})
     .call(draw);
 
 </script>
