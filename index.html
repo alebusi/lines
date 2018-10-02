@@ -48,7 +48,7 @@ function draw(selection){
         })
         .on('mousemove', function(){ 
             if (keep) {
-                Line = line([xy0, d3.mouse(this).map(function(x){ return x - 4; })]);
+                Line = line([xy0, d3.mouse(this).map(function(x){ return x - 6; })]);
                 console.log(Line);
                 path.attr('d', Line);
             }
