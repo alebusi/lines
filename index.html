@@ -4,13 +4,14 @@
 <style>
 
 body {
-    background: rgb(200,200,200);
+    background: white;
 }
 
 svg {
     margin: auto;
     display: block;
-    background: #ffbf18;
+    background: white;
+    border: solid 6px blue;
 }
 
 </style>
@@ -19,8 +20,8 @@ svg {
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var mainw = 1280,
-    mainh = 800;
+var mainw = 1600,
+    mainh = 960;
 
 d3.select('body').append('svg')
     .attr('width', mainw)
@@ -41,7 +42,7 @@ function draw(selection){
             path = d3.select('svg')
                      .append('path')
                      .attr('d', line([xy0, xy0]))
-                     .style({'stroke': 'black', 'stroke-width': '10px'});
+                     .style({'stroke': 'black', 'stroke-width': '12px'});
         })
         .on('mouseup', function(){ 
             keep = false; 
