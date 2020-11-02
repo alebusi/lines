@@ -58,7 +58,26 @@ function draw(selection){
                 console.log(Line);
                 path.attr('d', Line);
             }
-        });
+        })
+        .on('mousedown', function(){ 
+            keep = true;
+            xy0 = d3.mouse(this);
+            path = d3.select('svg')
+                     .append('path')
+                     .attr('d', line([xy0, xy0]))
+                     .style({'stroke': 'black', 'stroke-width': '12px'});
+        })
+        .on('mouseup', function(){ 
+            keep = false; 
+        })
+        .on('mousemove', function(){ 
+            if (keep) {
+                Line = line([xy0, d3.mouse(this).map(function(x){ return x - 6; })]);
+                console.log(Line);
+                path.attr('d', Line);
+            }
+        })
+    ;
 }
 
 d3.select('svg').append('rect')
