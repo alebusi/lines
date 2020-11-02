@@ -41,7 +41,7 @@ function draw(selection){
                  .y(function(d){ return d[1]; });
 
     selection
-        .on('touchstart', function(){ 
+        .on('touchstart,mousedown', function(){ 
             keep = true;
             xy0 = d3.mouse(this);
             path = d3.select('svg')
@@ -49,10 +49,10 @@ function draw(selection){
                      .attr('d', line([xy0, xy0]))
                      .style({'stroke': 'black', 'stroke-width': '12px'});
         })
-        .on('touchend', function(){ 
+        .on('touchend,mouseup', function(){ 
             keep = false; 
         })
-        .on('touchmove', function(){ 
+        .on('touchmove,mousemove', function(){ 
             if (keep) {
                 Line = line([xy0, d3.mouse(this).map(function(x){ return x - 6; })]);
                 console.log(Line);
