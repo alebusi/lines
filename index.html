@@ -4,14 +4,14 @@
 <style>
 
 body {
-    background: white;
+    background: black;
     overflow: hidden;
 }
 
 svg {
     display: block;
     background: white;
-    border: solid 6px blue;
+    border: solid 6px orange;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,7 +47,7 @@ function draw(selection){
             path = d3.select('svg')
                      .append('path')
                      .attr('d', line([xy0, xy0]))
-                     .style({'stroke': 'black', 'stroke-width': '12px'});
+                     .style({'stroke': 'black', 'stroke-width': '10px'});
         })
         .on('touchend', function(){ 
             keep = false; 
@@ -65,7 +65,7 @@ function draw(selection){
             path = d3.select('svg')
                      .append('path')
                      .attr('d', line([xy0, xy0]))
-                     .style({'stroke': 'black', 'stroke-width': '12px'});
+                     .style({'stroke': 'black', 'stroke-width': '10px'});
         })
         .on('mouseup', function(){ 
             keep = false; 
